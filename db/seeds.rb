@@ -7,3 +7,23 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+# db/seeds.rb
+
+# Clear existing messages
+
+Message.destroy_all
+
+# Add 5 different greetings
+greetings = [
+  'Hello, world!',
+  'Greetings from Maurice!',
+  'Welcome to the app!',
+  'Good day olabisi!',
+  'Hi there, how are you?'
+]
+
+greetings.each do |greeting|
+  Message.create(content: greeting)
+end
+
+puts 'Seeding completed successfully!'
